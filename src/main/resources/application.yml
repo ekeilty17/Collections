@@ -1,0 +1,9 @@
+server:
+  port: 5050
+  
+#keycloak:
+#  principal-attribute: ekeilty
+#  auth-server-url: http://localhost:8180/auth
+#  realm: dos-server
+#  resource: dos-server-app
+#  public-client: true
