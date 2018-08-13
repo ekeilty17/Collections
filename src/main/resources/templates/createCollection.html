@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Create Collection</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	
+	<form class="form-signin">
+	  <h2 class="form-signin-heading">Create Collection</h2>
+	  Id:      <input class="form-control" type="text" name="id" placeholder="12345"></input><br></br>
+	  Name:    <input class="form-control" type="text" name="name" placeholder="My Collection"></input><br></br>
+	  Objects: <input class="form-control" type="text" name="data objects" placeholder="1, 2, 3"></input><br></br>
+	</form>
+	 
+	<button onclick="createCollection()">create</button>
+	 
+	<p id="json"></p>
+	<br></br>
+	<p>Back to home page <a href="/">here</a></p>
+	
+	<script>
+	function createCollection() {
+		var xhttp = new XMLHttpRequest();
+	    xhttp.onreadystatechange = function() {
+	         if (this.readyState == 4) {
+	        	 if (this.status == 200) {
+	        		 alert(this.responseText);
+	        	 }
+	         }
+	    };
+	    xhttp.open("POST", "http://localhost:5050/collections", true);
+	    xhttp.setRequestHeader("Content-type", "application/json");
+	    var json = {
+	    		"id":document.getElementById("id").value, 
+	    		"name":document.getElementById("name").value, 
+	    		"objects":document.getElementById("data objects").value.split(",")
+	    };
+	    xhttp.send(json);
+	    document.getElementById("json").innerHTML = JSON.stringify(json);
+	    
+	}
+	</script>
+     
+</body>
+</html>

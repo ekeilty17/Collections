@@ -58,7 +58,8 @@ public class Ga4ghDataObject {
 		this.version = data.getVersion();
 		this.checksums = new ArrayList<Checksum>();
 		this.mimeType = data.getMimeType();
-		this.urls = data.getUrls();
+		this.urls = new ArrayList<URL>();
+		data.getUrls().forEach(url -> this.urls.add(new URL(url, new HashMap<String, String>(), new HashMap<String, String>())));
 		this.description = data.getDescription();
 		this.aliases = new ArrayList<String>();
 	}

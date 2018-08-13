@@ -57,12 +57,12 @@ public class Ga4ghDataBundle {
 	public Ga4ghDataBundle(Collection collection) {
 		super();
 		this.id = collection.getId();
-		this.data_object_ids = collection.getObjects();
+		this.data_object_ids = collection.getData_object_ids();
 		this.created = new DateTime().toString();
 		this.updated = new DateTime().toString();
 		this.version = "1.0.0";
 		this.checksums = new ArrayList<Checksum>();
-		this.aliases = new ArrayList<String>();
+		this.aliases = collection.getTags();
 		this.system_metadata = new HashMap<String, String>();
 		system_metadata.put("name", collection.getName());
 		this.user_metadata = new HashMap<String, String>();

@@ -17,7 +17,7 @@ public class CollectionData {
 	private String size;
 	private String version;
 	private String mimeType;
-	private List<URL> urls = new ArrayList<URL>();
+	private List<String> urls = new ArrayList<String>();
 	private String description;
 	
 }

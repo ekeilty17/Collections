@@ -16,6 +16,7 @@ public class Collection {
 	
 	private String id;
 	private String name;
-	private List<String> objects = new ArrayList<String>();
+	private List<String> data_object_ids = new ArrayList<String>();
+	private List<String> tags = new ArrayList<String>();
 	
 }
